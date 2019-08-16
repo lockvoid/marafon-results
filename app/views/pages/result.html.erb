@@ -1,0 +1,86 @@
+<div class="result">
+  <div class="member">
+    <div class="member__name">
+      <%= @entry.body['entry_name'] %>
+    </div>
+
+    <div class="member__tag">
+      номер участника <%= @entry.body['entry_tag'] %>
+    </div>
+  </div>
+
+  <% if @entry.body['entry_status'] == "CONF" %>
+    <div class="result__info">
+      <div class="result__left">
+        <div class="full-interval">
+          <div class="full-interval__row">
+            <div class="full-interval__legend">
+              Дистанция:
+            </div>
+            <div class="full-interval__value">
+              <%= @entry_full_interval['results_race_name'] %>
+            </div>
+          </div>
+
+          <div class="full-interval__row">
+            <div class="full-interval__legend">
+              Рейтинг:
+            </div>
+
+            <div class="full-interval__value">
+              <%= @entry_full_interval['results_rank'] %>
+            </div>
+          </div>
+        </div>
+
+        <div class="intervals">
+          <div class="intervals__title">
+            Отметки дистанции
+          </div>
+
+          <div class="intervals__data">
+            <% @entry_intervals.each do |interval| %>
+              <div class="intervals__row">
+                <div class="intervals__legend">
+                  <div class="intervals__legend-label">
+                    <%= interval['results_interval_name'] %>
+                  </div>
+                </div>
+
+                <div class="intervals__value">
+                  <%= interval['results_time_with_penalty'].split('.')[0] %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+      <div class="result__right">
+        <div class="rank">
+          <div class="rank__label">
+            время
+          </div>
+
+          <div class="rank__value">
+            <%= @entry_full_interval['results_time_with_penalty'].split('.')[0] %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% elsif @entry.body['entry_status'] == "DQ" %>
+    <div class="result-stats">
+      К сожалению, вы были дисквалифицированы. Обратитесь к администрации за подробностями.
+    </div>
+  <% elsif @entry.body['entry_status'] == "DNF" %>
+    <div class="result-stats">
+      Вы не финишировали. Обратитесь к администрации за подробностями.
+    </div>
+  <% elsif @entry.body['entry_status'] == "DNF" %>
+    <div class="result-stats">
+      Данные еще не обновлены. Обратись к администрации или попробуйте чуть позже.
+    </div>
+  <% end %>
+</div>
+
+

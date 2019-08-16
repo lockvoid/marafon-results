@@ -1,0 +1,228 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require reset
+ *= require_tree .
+ *= require_self
+ */
+
+@font-face {
+  font-family: "MTSSans";
+  font-weight: 400;
+  src: url("MTSSans-Regular.otf");
+}
+
+@font-face {
+  font-family: "MTSSans";
+  font-weight: 500;
+  src: url("MTSSans-Medium.otf");
+}
+
+@font-face {
+  font-family: "MTSSans";
+  font-weight: 700;
+  src: url("MTSSans-Black.otf");
+}
+
+@font-face {
+  font-family: "Montserrat-Bold";
+  font-weight: 600;
+  src: url("Montserrat-Bold.ttf");
+}
+
+
+@font-face {
+  font-family: "BebasNeue";
+  font-weight: 600;
+  src: url("BebasNeue-Bold.otf");
+}
+
+@font-face {
+  font-family: "BebasNeue";
+  font-weight: 300;
+  src: url("BebasNeue-Light.otf");
+}
+
+
+body {
+  background-color: #231f20;
+  margin: 0;
+  font-family: MTSSans;
+  font-size: 18px;
+  line-height: 20px;
+  min-height: 100vh;
+  color: #b0ccc4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3vw;
+  flex-direction: column;
+  box-sizing: border-box;
+  line-height: 1.7;
+}
+
+.application {
+  padding: 2vw 4vw;
+  width: 100%;
+  border-radius: 3vw;
+  border: 0.5vw solid #a4c9c8;
+  overflow: hidden;
+  box-sizing: border-box;
+  flex: 1;
+  display: flex;
+}
+
+.member {
+  display: flex;
+  flex-direction: column;
+}
+
+.member__name {
+  font-size: 6vw;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.member__tag {
+  font-size: 2vw;
+  font-weight: 500;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.result__info {
+  display: flex;
+}
+
+.result__left {
+  flex: 3;
+  padding-right: 5vw;
+}
+
+.result__right{
+  flex: 2;
+}
+
+.result__intervals {
+  margin-top: 4vw;
+}
+
+.full-interval {
+  font-size: 4vw;
+  font-family: "BebasNeue";
+  line-height: 1.3;
+  color: #999999;
+  margin-top: 2vw;
+  display: table;
+  font-weight: 300;
+}
+
+.full-interval__row {
+  display: flex;
+  display: table-row;
+}
+
+.full-interval__legend {
+  display: table-cell;
+  padding-right: 1vw;
+}
+
+
+.full-interval__value {
+  display: table-cell;
+}
+
+
+.intervals {
+  margin-top: 2vw;
+}
+
+.intervals__title {
+  color: #999999;
+  font-size: 3vw;
+  font-family: "BebasNeue";
+  line-height: 1.3;
+  margin-bottom: 0.5vw;
+  font-weight: 300;
+}
+
+.intervals__data {
+  display: table;
+  width: 100%;
+}
+
+.intervals__row {
+  display: table-row;
+}
+
+.intervals__legend {
+  padding: 0.5vw 0;
+  display: table-cell;
+  width: 100%;
+}
+
+.intervals__legend-label {
+  padding: 0 0.5vw;
+  font-size: 2vw;
+  font-weight: 500;
+  background: #b0ccc4;
+  color: #231f20;
+  width: 100%;
+}
+
+.intervals__value {
+  padding-left: 2vw;
+  font-size: 2.5vw;
+  font-family: "BebasNeue";
+  display: table-cell;
+  color: #999999;
+    font-weight: 300;
+}
+
+.rank {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2vw;
+}
+
+.rank__value {
+  font-family: "BebasNeue";
+  font-size: 12vw;
+  color: #ed1c24;
+  line-height: 1;
+  font-weight: 600;
+}
+
+.rank__label {
+  font-family: "BebasNeue";
+  font-size: 4vw;
+  color: #999999;
+}
+
+.result-stats {
+  font-size: 2.5vw;
+  color: #999999;
+  line-height: 1.5;
+  align-self: center;
+  widows: 100%;
+  flex:1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.3;
+}
+
