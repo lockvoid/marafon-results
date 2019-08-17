@@ -12,13 +12,13 @@ namespace :members do
     loop do
       puts "Request members on page #{current_page}".magenta
 
-      res = chronotrack.event_entries(ENV['CHRONOTRACK_EVENT_ID'], { columns: 'entry_id,entry_name,entry_tag,entry_bib,event_id,reg_transachronotrackion_reg_time_local', page: current_page, size: 1000 })
+      res = chronotrack.event_entries(ENV['CHRONOTRACK_EVENT_ID'], {  page: current_page, size: 1000 })
 
       if res.code != 200
         puts "An error has occured while importing data:".red
-        puts
+        puts res
 
-        raise res.inspechronotrack
+        raise 1
       end
 
       if res.last_page
@@ -33,6 +33,8 @@ namespace :members do
         end
 
         total_members += 1
+
+        puts "Imported #{total_members}" if (total_members % 100) == 0
       end
 
       current_page += 1
