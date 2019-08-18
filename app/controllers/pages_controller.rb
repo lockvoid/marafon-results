@@ -22,6 +22,8 @@ class PagesController < ApplicationController
           @entry_results = chronotrack.entry_results(@member.chronotrack_id, { size: 50, interval: 'all' })
 
           @entry_full_interval = @entry_results.body.find { |interval| interval['results_interval_full'].to_i == 1 }
+          @entry_full_interval = {} unless @entry_full_interval
+
           @entry_intervals = @entry_results.body.select { |interval| interval['results_interval_full'].to_i == 0 }
         end
 

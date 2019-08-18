@@ -9,11 +9,7 @@
     </div>
   </div>
 
-  <% if @entry_full_interval.nil? %>
-    <div class="result-stats">
-      Отсутсвует данные по контрольным отметкам. Обратись к администрации или попробуйте чуть позже.
-    </div>
-  <% elsif @entry.body['entry_status'] == "CONF" %>
+  <% if @entry.body['entry_status'] == "CONF" %>
     <div class="result__info">
       <div class="result__left">
         <div class="full-interval">
@@ -22,7 +18,7 @@
               Дистанция:
             </div>
             <div class="full-interval__value">
-              <%= @entry_full_interval['results_race_name'] %>
+              <%= @entry.body['race_name'] %>
             </div>
           </div>
 
@@ -52,7 +48,7 @@
                 </div>
 
                 <div class="intervals__value">
-                  <%= interval['results_time_with_penalty'].split('.')[0] %>
+                  <%= format_time interval['results_time_with_penalty'] %>
                 </div>
               </div>
             <% end %>
@@ -67,7 +63,7 @@
           </div>
 
           <div class="rank__value">
-            <%= @entry_full_interval['results_time_with_penalty'].split('.')[0] %>
+            <%=  format_time @entry_full_interval['results_time_with_penalty'] %>
           </div>
         </div>
       </div>
