@@ -9,7 +9,11 @@
     </div>
   </div>
 
-  <% if @entry.body['entry_status'] == "CONF" %>
+  <% if @entry_full_interval.nil? %>
+    <div class="result-stats">
+      Отсутсвует данные по контрольным отметкам. Обратись к администрации или попробуйте чуть позже.
+    </div>
+  <% elsif @entry.body['entry_status'] == "CONF" %>
     <div class="result__info">
       <div class="result__left">
         <div class="full-interval">
