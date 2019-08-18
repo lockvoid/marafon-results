@@ -21,10 +21,6 @@ namespace :members do
         raise 1
       end
 
-      if res.last_page
-        break
-      end
-
       puts "Import members on page #{current_page}".magenta
 
       res.body.each do |member_data, index|
@@ -38,6 +34,10 @@ namespace :members do
       end
 
       current_page += 1
+
+      if res.last_page
+        break
+      end
     end
 
     puts "#{total_members} imported successfully!".green
