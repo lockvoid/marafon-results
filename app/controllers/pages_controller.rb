@@ -37,7 +37,7 @@ class PagesController < ApplicationController
 
       return render :error
     end
-  rescue SocketError => e
+  rescue SocketError, Net::OpenTimeout => e
     flash.now.alert = 'Отсутствует подключение к интернету'
 
     return render :error
