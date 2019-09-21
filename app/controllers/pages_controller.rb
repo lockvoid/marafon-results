@@ -46,11 +46,7 @@ class PagesController < ApplicationController
   private
 
     def get_last_tag
-      unless File.file? ENV['READER_CSV_PATH']
-        raise 'CSV файл не найден'
-      end
-
-      last_reader_line = `tail -n 1 #{ENV['READER_CSV_PATH']}`
+      last_reader_line = `tail -1 #{ENV['READER_CSV_PATH']}`
 
       if last_reader_line.present?
         last_reader_line.split('~')[2]
@@ -60,11 +56,9 @@ class PagesController < ApplicationController
     end
 
     def get_member_info
-
     end
 
     def get_member_results
-
     end
 
     def chronotrack
