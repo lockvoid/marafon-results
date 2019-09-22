@@ -1,6 +1,6 @@
 ## Установка
 
-Установите Ruby, SQLite3 и Ruby on Rails
+Установите Ruby (версия 2.6.4), SQLite3 и Ruby on Rails, Node, Yarn, и [Windows Server 2003 Resource Kit Tools](https://www.microsoft.com/en-us/download/confirmation.aspx?id=17657)
 
 OS X:
 
